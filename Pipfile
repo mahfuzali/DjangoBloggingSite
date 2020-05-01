@@ -13,7 +13,7 @@ gunicorn = "*"
 "psycopg2" = "*"
 whitenoise = "*"
 unittest-xml-reporting = "*"
-
+django-crispy-forms = ">=1.9"
 
 [dev-packages]
 
