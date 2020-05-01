@@ -22,6 +22,7 @@ jobs:
             sudo pip install pipenv
             pipenv install
             sudo pip install django-crispy-forms
+            django-crispy-forms install
       - save_cache:
           key: deps10-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
