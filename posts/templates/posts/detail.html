@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %} Blog {% endblock %}
+
+{% block content %}
+<h1 class="display-3">{{post.title}}</h1>
+<h3 class="lead">{{post.subtitle}}</h3>
+<p><small>{{post.date}}</small></p>
+<p>{{post.description}}</p>
+
+<a href="{% url 'welcome' %}" class="btn btn-primary">Home</a>
+{% endblock %}

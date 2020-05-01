@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <br>
+    <a href="{% url 'new' %}" class="btn btn-danger btn-lg"><i class="fas fa-feather-alt"></i> Write a new post</a>
+    <br>
+    <br>
+
+    <div class="card-deck">
+        {% for post in posts %}
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ post.subtitle|truncatechars:70 }}</h6>
+                <p class="card-text">{{ post.description|truncatechars:200  }}</p>
+
+              </div>
+              <div class="card-footer">
+                  <a href="{% url 'detail' post.id %}" class="btn btn-primary">Read more</a>
+                  <br>
+                  <small class="text-muted">Posted on {{post.date}}</small>
+              </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
