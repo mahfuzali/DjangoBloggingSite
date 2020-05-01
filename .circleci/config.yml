@@ -19,8 +19,6 @@ jobs:
           key: deps10-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - run:
           command: |
-            sudo pip install django-crispy-forms
-            django-crispy-forms install
             sudo pip install pipenv
             pipenv install
       - save_cache:
