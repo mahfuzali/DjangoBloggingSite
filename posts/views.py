@@ -15,7 +15,9 @@ def new(request):
     if request.method == "POST":
         form = MeetingForm(request.POST)
         if form.is_valid():
-            form.save()
+            instance = form.save(commit=False)
+            instance.user = request.user
+            instance.save()
             return redirect("welcome")
     else:
         form = MeetingForm()

@@ -9,7 +9,8 @@ from .models import Post
 class MeetingForm(ModelForm):
     class Meta:
         model = Post
-        fields = '__all__'
+        #fields = '__all__'
+        fields = ["title", "subtitle", "description", "date"]
         widgets = {
             'date': DateInput(attrs={"type": "date"})
         }

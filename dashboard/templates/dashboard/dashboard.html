@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h4 class="display-4">List of posts</h4>
+
+{% for userpost in userposts %}
+<ul>
+    <li><h5 class="display-5"><a href="{% url 'detail' userpost.id %}">{{userpost.title}}</a></h5></li>
+</ul>
+{% endfor %}
+
+<h5 class="display-5">Total number of post: {{userposts.count}}</h5>
+
+<br>
+<a href="{% url 'welcome' %}" class="btn btn-primary">Home</a>
+{% endblock %}
